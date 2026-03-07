@@ -118,3 +118,24 @@ install ttf-dejavu
 install ttf-liberation
 install ttf-fira-code
 
+# ---- Node ---
+if ! command -v nvm >/dev/null 2>&1; then
+  echo "nvm - installing ..."
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+else
+  echo "nvm already installed, skipping"
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+nvm install --lts
+
+# --- Open AI Codex ---
+if ! command -v codex >/dev/null 2>&1; then
+  echo "Codex - installing ..."
+  npm install -g @openai/codex
+else
+  echo "Code already installed, skipping"
+fi
+
