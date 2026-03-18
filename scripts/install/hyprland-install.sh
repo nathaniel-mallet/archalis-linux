@@ -142,3 +142,6 @@ fi
 # --- Wallpaper and Screensaver ---
 install swww
 
+# --- rclone for backups ---
+install rclone
+
