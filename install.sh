@@ -60,16 +60,6 @@ else
 	echo "yay - skipped (already installed)"
 fi 
 
-# --- Terminal Tools ---
-install fzf # Fuzzy Find
-install ripgrep
-install fd
-install bat # cat replacement
-install eza # ls replacement
-install zoxide
-install unzip
-install zip
-
 # --- System tools ---
 install btop
 install man-db
