@@ -1,6 +1,17 @@
 #!/bin/bash
 
 source "$(dirname "$0")/../utils.sh"
+
+# --- Hyprland & Dependencies ---
+install hyprland
+install xorg-xwayland
+install xdg-desktop-portal-hyprland
+install qt5-wayland
+install qt6-wayland
+install kitty
+install wl-clipboard
+install polkit-gnome
+
 # --- Browsers ---
 install firefox
 install chromium

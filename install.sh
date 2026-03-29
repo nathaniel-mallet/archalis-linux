@@ -3,7 +3,11 @@
 source "$(dirname "$0")/scripts/utils.sh"
 
 # Git
+# If this was kicked off using boot.sh, then git should already be installed
+# But it doesn't hurt to try again, just in case the repo was manually cloned
 install git
+
+git clone "https://github.com/nathaniel-mallet/archalis-linux.git" ~/.local/share/archalis >/dev/null
 
 # Neovim
 install neovim
@@ -60,25 +64,6 @@ else
 	echo "yay - skipped (already installed)"
 fi 
 
-# --- System tools ---
-install btop
-install man-db
-install tree
-install base-devel
-
-# --- Nvidia drivers ---
-install nvidia-open
-install nvidia-utils
-install nvidia-settings
-sudo mkinitcpio -P
-echo "You should reboot the computer at this point to load the Nvidia driver. Once that's done, run nvidia-smi to verify that the driver is working"
-
-# --- Hyprland & Dependencies ---
-install hyprland
-install xorg-xwayland
-install xdg-desktop-portal-hyprland
-install qt5-wayland
-install qt6-wayland
-install kitty
-install wl-clipboard
-install polkit-gnome
+source "./scripts/install/system.sh"
+source "./scripts/install/nvidia.sh"
+source "./scripts/install/hyprland-install.sh"
