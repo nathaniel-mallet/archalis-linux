@@ -14,7 +14,7 @@ This is primarily a hobby/learning project, and some of the configuration is spe
 
 ## Installation
 1. Complete the basic Arch OS installation found on the [Beginning Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
-2. Run the following command: `wget https://github.com/nathaniel-mallet/dotfiles/releases/download/0.1/install.sh | bash`
+2. Run the following command: `wget https://github.com/nathaniel-mallet/dotfiles/releases/download/0.1/boot.sh | bash`
 3. Run the various install scripts found in the `scripts\install` folder for whatever you need or would like to have installed in your environment. At a minimum, you should run `hyprland-install.sh`, to complete the Hyprland installation.
 
 ## Repo Structure
