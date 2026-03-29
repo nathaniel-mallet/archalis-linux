@@ -1,4 +1,5 @@
-alias ls='eza --icons'
-alias ll='eza --icons -l'
-alias la='eza --icons -la'
-
+alias ls='eza --icons=auto --group-directories-first'
+alias ll='eza --icons=auto --group-directories-first -l'
+alias la='eza --icons=auto --group-directories-first -la'
+alias lt='eza --icons=auto --group-directories-first -T'
+alias llt='eza --icons=auto --group-directories-first -l -T'
