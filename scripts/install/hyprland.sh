@@ -148,3 +148,6 @@ install swww
 # --- rclone for backups ---
 install rclone
 
+# Not sure I need this yet
+# This basically prompts me for a password if needed
+# install ksshaskpass

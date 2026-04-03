@@ -2,6 +2,9 @@
 
 set -e
 
+# Install the actual app
+install neovim
+
 REPO_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
 
 source "$REPO_DIR/scripts/utils.sh"

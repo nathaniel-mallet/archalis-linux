@@ -9,6 +9,20 @@ if [ -n "$_UTILS_SH_LOADED" ]; then
 fi
 _UTILS_SH_LOADED=1
 
+# yay
+# Just making sure it's installed in case one of the scripts calls 
+# the yay_install() function
+if ! command -v yay &> /dev/null; then
+	echo "Installing yay ..."
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si --noconfirm
+	cd ..
+	rm -rf yay
+else
+	echo "yay - skipped (already installed)"
+fi 
+
 # Helper function for install messages
 install() {
 	if pacman -Q $1 &> /dev/null; then
