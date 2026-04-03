@@ -9,30 +9,6 @@ install git
 
 git clone "https://github.com/nathaniel-mallet/archalis-linux.git" ~/.local/share/archalis >/dev/null
 
-# Neovim
-install neovim
-
-# zsh
-install zsh
-if [ $SHELL != "$(which zsh)" ]; then
-	echo "Setting zsh as default shell ..."
-	chsh -s $(which zsh)
-else
-	echo "zsh is already the default shell, skipping"
-fi
-
-# oh my zsh
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-	echo "Installing Oh My Zsh ..."
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-else
-	echo "Oh My Zsh - skipped (already installed)"
-fi
-
-# ssh
-install openssh
-install ksshaskpass
-
 # create default directories
 dirs=(
 "$HOME/Documents"
@@ -49,21 +25,15 @@ for dir in "${dirs[@]}"; do
 	fi
 done
 
-# tmux
-install tmux
-
-# yay
-if ! command -v yay &> /dev/null; then
-	echo "Installing yay ..."
-	git clone https://aur.archlinux.org/yay.git
-	cd yay
-	makepkg -si --noconfirm
-	cd ..
-	rm -rf yay
-else
-	echo "yay - skipped (already installed)"
-fi 
-
+# Run the individual install scripts
+# Eventually, this will be a menu for users to pick and choose what to install
+source "./scripts/install/neovim.sh"
+source "./scripts/install/zsh.sh"
 source "./scripts/install/system.sh"
+source "./scripts/install/terminal-tools.sh"
 source "./scripts/install/nvidia.sh"
-source "./scripts/install/hyprland-install.sh"
+source "./scripts/install/hyprland.sh"
+source "./scripts/install/screenshots.sh"
+source "./scripts/install/development.sh"
+source "./scripts/install/python.sh"
+source "./scripts/install/ai.sh"
