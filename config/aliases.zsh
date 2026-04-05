@@ -1,3 +1,4 @@
+alias bat='bat -p'
 alias ls='eza --icons=auto --group-directories-first'
 alias ll='eza --icons=auto --group-directories-first -l'
 alias la='eza --icons=auto --group-directories-first -la'
