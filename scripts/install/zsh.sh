@@ -2,6 +2,19 @@
 
 mkdir -p ~/.zsh
 
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+
+# Copy zsh config files
+cp "$DOTFILES_DIR/config/aliases.zsh" ~/.zsh/aliases.zsh
+cp "$DOTFILES_DIR/config/functions.zsh" ~/.zsh/functions.zsh
+
+# Append source commands to ~/.zshrc if not already present
+for file in aliases functions; do
+	if ! grep -qF "source ~/.zsh/${file}.zsh" ~/.zshrc 2>/dev/null; then
+		echo "source ~/.zsh/${file}.zsh" >> ~/.zshrc
+	fi
+done
+
 # zsh
 install zsh
 if [ $SHELL != "$(which zsh)" ]; then
