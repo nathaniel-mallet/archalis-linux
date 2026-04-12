@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$(dirname "$0")/../utils.sh"
+
 install nvidia-open
 install nvidia-utils
 install nvidia-settings

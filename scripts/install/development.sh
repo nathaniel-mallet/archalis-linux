@@ -6,3 +6,4 @@ source "$(dirname "$0")/../utils.sh"
 # That's because git is already installed by the main `install.sh`installer as a base dependency
 install github-cli
 yay_install grpcurl
+install keychain # So you only have to enter your git key password once per session
