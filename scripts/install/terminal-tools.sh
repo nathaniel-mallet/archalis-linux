@@ -11,3 +11,4 @@ install eza # ls replacement
 install zoxide
 install unzip
 install zip
+install starship
