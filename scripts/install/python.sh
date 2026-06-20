@@ -7,3 +7,4 @@ install openssl
 install zlib
 install xz
 install tk
+install uv
